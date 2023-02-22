@@ -1,0 +1,327 @@
+/* Quản lý đặt phòng-Cao Hữu Hiếu */
+.main {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.main .room .header {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.main .room .header i {
+  font-size: 30px;
+}
+
+.main .room .header span {
+  font-size: 26px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: bottom;
+  margin-left: 5px;
+}
+
+.main .room .select {
+  margin-bottom: 8px;
+}
+
+.main .room .select label {
+  display: block;
+  margin-bottom: 0px;
+}
+
+.main .room .status .label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.main .room .select select {
+  padding: 3px 4px;
+  min-width: 200px;
+}
+
+.main .room .status a {
+  padding: 4px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.main .room .status a:hover {
+  text-decoration: none;
+  background-color: #ccc;
+}
+
+.main .room .status a .color_white {
+  color: white;
+}
+
+.main .room .status .empty {
+  background-color: green;
+}
+
+.main .room .status .dirty {
+  background-color: orange;
+}
+
+.main .room .status .repair {
+  background-color: red;
+}
+
+.main .room .status a span {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.main .room .details {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.main .room .details .green {
+  background-color: green;
+}
+
+.main .room .details .red {
+  background-color: red;
+}
+
+.main .room .details .blue {
+  background-color: blue;
+}
+
+.main .room .details .detail {
+  padding: 20px 30px;
+  text-align: center;
+  margin: 0 4px 4px 0;
+  color: white;
+  font-weight: 400;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.white {
+  color: white;
+}
+
+.orange{
+	background-color: orange;
+}
+
+.main .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .heading .addnew-page {
+    background-color: #379237;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+}
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+
+.form-container {
+    background-color: #eee;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 50%;
+    height: 550px;
+    overflow-y: auto;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-container form .form-input {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-input label {
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+.form-input input {
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+}
+
+.form-input select {
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+}
+.submit-btn {
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #82CD47;
+    box-shadow: 0px 5px #379237;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.submit-btn:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+.table-container {
+    background-color: bisque;
+    flex: 5;
+}
+
+/*  */
+.form-service {
+    width: 50%;
+    background-color: #eee;
+    padding: 20px 30px;
+    border-radius: 10px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-service form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-service form .form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+/*  */
+/* quản lý đặt phòng */
+
+
+.main__status {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.main__status .top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.main__status .top .top__status  {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__status .top .top__status span:nth-child(1) {
+    color: #03C988;
+    font-weight: bold;
+}
+.main__status .top .top__status span:nth-child(2) {
+    color: #FFED00;
+    font-weight: bold;
+}
+.main__status .top .top__status span:nth-child(3) {
+    color: #F94A29;
+    font-weight: bold;
+}
+
+.main__status .top .top__classify {
+    background-color: #5a5a5a;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.main__status .top .top__classify button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #5a5a5a;
+    border-radius: 4px;
+    font-weight: 500;
+
+}
+
+.main__status .top .top__classify .active {
+    background-color: #eee;
+}
+
+.main__status .bot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.main__status .bot .status__desc {
+    display: flex;
+    gap: 10px;
+    background-color: #eee;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    overflow: hidden;
+}
+
+.main__status .bot .status__desc .status__desc--left {
+    padding: 20px 10px;
+    border-right: 1px solid #5a5a5a;
+}
+
+.main__status .bot .status__desc .booked {
+    background-color: #FFED00;
+}
+
+.main__status .bot .status__desc .is-use {
+    background-color: #F94A29;
+}
+.main__status .bot .status__desc .empty {
+    background-color: #03C988;
+}
+
+.main__status .bot .status__desc .status__desc--right {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
