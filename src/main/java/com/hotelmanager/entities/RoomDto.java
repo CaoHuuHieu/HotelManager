@@ -8,7 +8,6 @@ public class RoomDto {
 	private float price;
 	private String name_type;
 	private int status;
-	
 	public int getId() {
 		return id;
 	}
@@ -17,12 +16,14 @@ public class RoomDto {
 		this.id = id;
 	}
 
-	public RoomDto(int id, String room_no, int num_people, float price, int status) {
+	
+
+	public RoomDto(int id, String room_no, String room_name, String name_type, int status) {
 		super();
 		this.id = id;
 		this.room_no = room_no;
-		this.num_people = num_people;
-		this.price = price;
+		this.room_name = room_name;
+		this.name_type = name_type;
 		this.status = status;
 	}
 
@@ -86,5 +87,12 @@ public class RoomDto {
 		this.name_type = name_type;
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		return "RoomDto [id=" + id + ", room_no=" + room_no + ", room_name=" + room_name + ", name_type=" + name_type
+				+ ", status=" + status + "]";
+	}
+	
 	
 }

@@ -33,7 +33,7 @@
 			  		  <div class="dropdown-content">
 					    <a href="/HotelManager/admin/sodophong" class="text-style">
               		   		<i class="fa-solid fa-hotel"></i>
-               		   		<span>Sơ đồ phòng</span>
+               		   		<span >Sơ đồ phòng</span>
                		    </a>
                		    <a href="/HotelManager/admin/danhsachdatphong" class="text-style">
               		   		<i class="fa-solid fa-hotel"></i>

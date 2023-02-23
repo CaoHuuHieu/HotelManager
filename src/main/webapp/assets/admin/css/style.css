@@ -268,4 +268,38 @@ i {
 }
 /* navbar css end */
 
+
+
+
+.background_green {
+  background-color: green;
+}
+
+.background_red {
+  background-color: red;
+}
+
+.background_blue {
+  background-color: blue;
+}
+
+
+.background_orange{
+	background-color: orange;
+}
+.color_green {
+  color: green;
+}
+
+.color_blue {
+  color: blue;
+}
+
+.color_red {
+  color: red;
+}
+
+.color_white {
+  color: white;
+}
 	
