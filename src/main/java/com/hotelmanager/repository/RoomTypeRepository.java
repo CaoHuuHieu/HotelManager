@@ -18,9 +18,10 @@ public class RoomTypeRepository {
 	@Transactional
 	public List<RoomTypeEntity> getRoomTypeList(){
 		Session session = sessionFactory.openSession();
-		List<RoomTypeEntity> list = session.createQuery("from RoomTypeEntity r", RoomTypeEntity.class).getResultList();
+		List<RoomTypeEntity> list = session.createQuery("from RoomTypeEntity ", RoomTypeEntity.class).getResultList();
 		return list;
 	}
+	
 	@Transactional
 	public void addRoomType(RoomTypeEntity roomType) {
 		Session session = sessionFactory.openSession();

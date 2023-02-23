@@ -6,15 +6,14 @@ public class RoomDto {
 	private String room_name;
 	private int num_people;
 	private float price;
-	private String name_type;
+	private int id_roomtype;
 	private int status;
-	
-	public int getId() {
-		return id;
-	}
+	private String name_type;
 
-	public void setId(int id) {
-		this.id = id;
+	
+	
+	public RoomDto() {
+		super();
 	}
 
 	public RoomDto(int id, String room_no, int num_people, float price, int status) {
@@ -24,6 +23,29 @@ public class RoomDto {
 		this.num_people = num_people;
 		this.price = price;
 		this.status = status;
+	}
+
+	public RoomDto(int id, String room_no, String room_name, int num_people, float price, int id_roomtype, int status,
+			String name_type) {
+		super();
+		this.id = id;
+		this.room_no = room_no;
+		this.room_name = room_name;
+		this.num_people = num_people;
+		this.price = price;
+		this.id_roomtype = id_roomtype;
+		this.status = status;
+		this.name_type = name_type;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getRoom_no() {
@@ -42,7 +64,6 @@ public class RoomDto {
 		this.room_name = room_name;
 	}
 
-
 	public int getNum_people() {
 		return num_people;
 	}
@@ -57,6 +78,14 @@ public class RoomDto {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public int getId_roomtype() {
+		return id_roomtype;
+	}
+
+	public void setId_roomtype(int id_roomtype) {
+		this.id_roomtype = id_roomtype;
 	}
 
 	public String getName_type() {
@@ -75,16 +104,6 @@ public class RoomDto {
 		this.status = status;
 	}
 
-	public RoomDto(int id, String room_no, String room_name, int id_roomtype, int num_people, float price,
-			String name_type, int status) {
-		super();
-		this.id = id;
-		this.room_no = room_no;
-		this.room_name = room_name;
-		this.num_people = num_people;
-		this.price = price;
-		this.name_type = name_type;
-		this.status = status;
-	}
+	
 	
 }

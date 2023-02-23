@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="room")
+@Table(name="Room")
 public class RoomEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,36 @@ public class RoomEntity {
 	private int num_people;
 	private float price;
 	private int status;
+	
+	public RoomEntity() {
+		
+	}
+	
+	public RoomEntity(int id) {
+		this.id = id;
+	}
+	
+	public RoomEntity( String room_no, String room_name, int id_roomtype, int num_people, float price) {
+		
+		this.room_no = room_no;
+		this.room_name = room_name;
+		this.id_roomtype = id_roomtype;
+		this.num_people = num_people;
+		this.price = price;
+		this.status = 0;
+	}
+	public RoomEntity(int id, String room_no, String room_name, int id_roomtype, int num_people, float price,
+			int status) {
+		
+		this.id = id;
+		this.room_no = room_no;
+		this.room_name = room_name;
+		this.id_roomtype = id_roomtype;
+		this.num_people = num_people;
+		this.price = price;
+		this.status = status;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -36,12 +66,14 @@ public class RoomEntity {
 	public void setRoom_name(String room_name) {
 		this.room_name = room_name;
 	}
+	
 	public int getId_roomtype() {
 		return id_roomtype;
 	}
 	public void setId_roomtype(int id_roomtype) {
 		this.id_roomtype = id_roomtype;
 	}
+	
 	public int getNum_people() {
 		return num_people;
 	}
@@ -60,4 +92,10 @@ public class RoomEntity {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	@Override
+	public String toString() {
+		return "RoomEntity [id=" + id + ", room_no=" + room_no + ", room_name=" + room_name + ", id_roomtype="
+				+ id_roomtype + ", num_people=" + num_people + ", price=" + price + ", status=" + status + "]";
+	}
+
 }

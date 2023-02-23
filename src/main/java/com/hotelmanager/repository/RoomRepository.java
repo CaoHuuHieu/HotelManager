@@ -1,30 +1,51 @@
 package com.hotelmanager.repository;
 
-import javax.management.Query;
+import java.util.List;
+
 import javax.transaction.Transactional;
+import javax.validation.constraints.Email;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.hotelmanager.entities.RoomDto;
+import com.hotelmanager.entities.RoomEntity;
+
 @Repository
 
 public class RoomRepository {
 	@Autowired
 	SessionFactory sessionFactory;
-	public Long countRoomByStatus(int status) {
+	
+	@Transactional
+	public RoomEntity getRoombyID(int id) {
 		Session session = sessionFactory.openSession();
-		@SuppressWarnings("rawtypes")
-		org.hibernate.query.Query query = session.createQuery("select count(p.id) from RoomEntity p where status=:status");
-		query.setString("status", status+"");
-		 return (Long)query.uniqueResult();
+		RoomEntity roomid = session.get(RoomEntity.class, id);
+		return roomid;
 	}
-	public List<> countRoomByStatus(int status) {
+	
+	
+	@Transactional
+	public List<RoomEntity> getRoomList(){
 		Session session = sessionFactory.openSession();
-		@SuppressWarnings("rawtypes")
-		org.hibernate.query.Query query = session.createQuery("select count(p.id) from RoomEntity p where status=:status");
-		query.setString("status", status+"");
-		 return (Long)query.uniqueResult();
+		List<RoomEntity> list = session.createQuery("from RoomEntity r", RoomEntity.class).getResultList();
+		return list;
+	}
+	
+	@Transactional
+	public void addRoom (RoomEntity room) {
+		Session session = sessionFactory.openSession();
+		RoomEntity newroom = new RoomEntity(room.getRoom_no(),room.getRoom_name(), room.getId_roomtype(),room.getNum_people() ,room.getPrice());
+		session.save(newroom);
+	}
+	
+	@Transactional
+	public void deleteRoom (int id) {
+		Session session = sessionFactory.openSession();
+		RoomEntity roomid = session.get(RoomEntity.class, id);
+		System.out.println("================"+roomid);
+		session.delete(roomid);
 	}
 }

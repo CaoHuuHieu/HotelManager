@@ -12,10 +12,16 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!-- Add support for component scanning -->
-	<context:component-scan
-		base-package="com.hotelmanager" />
+	<context:component-scan base-package="com.hotelmanager" />
+	<context:annotation-config />
 	<!-- Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven />
+	<bean id="roomDtoRepository" class="com.hotelmanager.repository.RoomDtoRepository"/>
+	<bean id="roomDtoService" class="com.hotelmanager.services.RoomDtoService"/>
+	<bean id="roomRepository" class="com.hotelmanager.repository.RoomRepository"/>
+	<bean id="roomService" class="com.hotelmanager.services.RoomService"/>
+	<bean id="roomTypeRepository" class="com.hotelmanager.repository.RoomTypeRepository"/>
+	<bean id="roomTypeService" class="com.hotelmanager.services.RoomTypeService"/>
 	<!-- Define Spring MVC view resolver -->
 	<bean id="view"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -32,8 +38,8 @@
 			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<property name="url"
 			value="jdbc:sqlserver://localhost:1433;databaseName=hotelmanager;" />
-		<property name="username" value="sa" />
-		<property name="password" value="1234" />
+		<property name="username" value="A" />
+		<property name="password" value="123456" />
 	</bean>
 	<!-- Step 2: Setup Hibernate session factory -->
 	<bean id="sessionFactory"

@@ -1,45 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<h1>ADD new</h1>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+<h1>Room</h1>
                 <div class="main-container">
                     <div class="form-container">
-                        <h5>Tiện ích</h5>
-                        <form>
+                        <h5>Room Form</h5>
+                        <form:form method="post" action="saveroom">
                             <div class="form-input">
                                 <label>Room No</label>
-                                <input type="text" name="" id="" placeholder="Room Name">
+                                <form:input type="text" path="room_no" name="" id="" placeholder="Room No"/>
                             </div>
                             <div class="form-input">
                                 <label>Room Name</label>
-                                <input type="text" name="" id="" placeholder="Room Name">
+                                <form:input type="text" path="room_name" name="" id="" placeholder="Room Name"/>
                             </div>
                             <div class="form-input">
-                                <label>Room Type</label>
-                                <select name="" id="">
-                                    <option value="">Thường</option>
-                                    <option value="">Vip</option>
-                                    <option value="">Vip pro</option>
-                                    <option value="">Vip pro max</option>
-                                    <option value="">Tổng thống</option>
-                                </select>
+                                <label>Type</label>
+                                <form:select path="id_roomtype">
+                                 <form:option value="0" label="Chọn loại phòng"/>  
+                                <c:forEach items="${listtype}" var="listtype" >
+                                  <form:option value="${listtype.id}" label="${listtype.name}"/>  
+                                   </c:forEach>c:forEach >
+                                </form:select>
                             </div>
                             <div class="form-input">
                                 <label>Number People</label>
-                                <input type="number" min="0" name="" id="" placeholder="Room Name">
+                                <form:input type="number" path="num_people" min="0" name="" id="" placeholder="Number People"/>
                             </div>
                             <div class="form-input">
                                 <label>Price</label>
-                                <input type="number" min="0" name="" id="" placeholder="Room Name">
+                                <form:input type="number" path="price" min="0" name="" id="" placeholder="Price"/>
                             </div>
-                            <div class="form-input">
+                            <button type="submit" class="submit-btn">Submit</button>
+                            <!-- <div class="form-input">
                                 <label>Description</label>
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
-                            </div>
-                        </form>
+                            </div> -->
+                      
                     </div>
                     <div class="form-service">
                         <h5>Tiện ích</h5>
-                        <form action="">
+                        
                             <div class="form-input">
                                 <label for="">Tiện ích 1</label>
                                 <input type="text">
@@ -56,7 +58,7 @@
                                 <label for="">Tiện ích 4</label>
                                 <input type="text">
                             </div>
-                        </form>
-                        <button class="submit-btn">Submit</button>
+                        
+	                     </form:form>
                     </div>
                 </div>
