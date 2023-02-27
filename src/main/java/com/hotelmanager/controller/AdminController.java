@@ -90,6 +90,7 @@ public class AdminController {
 	}
 	@RequestMapping(value="/saveusers", method = RequestMethod.POST)
 	public String saveUsers(@ModelAttribute("UsersEntity") UsersEntity users, @RequestParam String thaotac) {
+		System.out.println("==================="+users.getBirthday());
 		if(thaotac.equalsIgnoreCase("update")) {
 			usersService.updateUsers(users);    
 		}

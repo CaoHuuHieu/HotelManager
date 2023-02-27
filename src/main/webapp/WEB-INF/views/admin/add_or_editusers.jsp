@@ -12,7 +12,7 @@
 <div class="add-new-container">
                     <h5>Add or Edit Users</h5>
                     <div class="add-new">
-                        <form:form method="post" action="saveutilities?thaotac=${method}">
+                        <form:form method="post" action="saveusers?thaotac=${method}">
                         	<form:hidden  path="id"/>
                         	<div class="form-input">
                                 <label>Username: </label>
@@ -28,11 +28,14 @@
                             </div>
                             <div class="form-input">
                                 <label>Birthday: </label>
-                                <form:input type="date" path="birthday" placeholder="Enter birthday"/>
+                                <form:input type="date" path="birthday"/>
+                            </div>
+                            <div class="form-input">
+                                <label>Createday: </label>
+                                <form:input type="date" path="createday"/>
                             </div>
                             <div class="form-input">
                                 <label>Gender: </label>
-                                <%-- <form:input type="text" path="gender" placeholder="Enter gender"/> --%>
                                 Male<form:radiobutton path="gender" value="Male"/>
                                 Female<form:radiobutton path="gender" value="Female"/>
                                 Other<form:radiobutton path="gender" value="Other"/>

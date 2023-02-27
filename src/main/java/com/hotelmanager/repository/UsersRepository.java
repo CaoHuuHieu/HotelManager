@@ -40,8 +40,12 @@ public class UsersRepository {
 	@Transactional
 	public void addUsers (UsersEntity users) {
 		Session session = sessionFactory.openSession();
-		UsersEntity newusers = new UsersEntity(users.getUsername(),users.getPassword(),users.getFullname(),users.getBirthday(),users.getCreateday(),users.getGender(),users.getPhone_number(),users.getAddress(),users.getRole());
-		session.save(newusers);
+		/*
+		 * UsersEntity newusers = new
+		 * UsersEntity(users.getUsername(),users.getPassword(),users.getFullname(),users
+		 * .getBirthday(),users.getCreateday(),users.getGender(),users.getPhone_number()
+		 * ,users.getAddress(),users.getRole());
+		 */session.save(users);
 	}
 	
 	@Transactional
