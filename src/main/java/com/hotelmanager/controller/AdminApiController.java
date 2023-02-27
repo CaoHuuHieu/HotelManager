@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotelmanager.entities.BookingEntity;
 import com.hotelmanager.entities.RoomDto;
+import com.hotelmanager.services.BookingService;
 import com.hotelmanager.services.RoomDtoService;
 import com.hotelmanager.services.RoomService;
 
@@ -22,6 +24,8 @@ import com.hotelmanager.services.RoomService;
 public class AdminApiController {
 	@Autowired
 	RoomDtoService roomDtoService;
+	@Autowired
+	BookingService bookingService;
 	@Autowired
 	RoomService roomService;
 	@RequestMapping(value="/getRoomList", method = RequestMethod.GET)
@@ -43,10 +47,15 @@ public class AdminApiController {
 		for(int i = 0; i < 7; i++) {
 			list.add(roomService.countRoomByRoomType(roomType, i));
 		}
-		System.out.println("==================="+list.toString());
 		return new ResponseEntity<List<Long>>(list, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value="/bookingList", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<BookingEntity>> getBookingList(@RequestParam(required = false) String phonebooking, @RequestParam(required = false) String typebooking,  @RequestParam(required = false) String datecheckin,  @RequestParam(required = false) String datecheckout) {
+		List<BookingEntity> list = bookingService.getAllBookKing();
+		System.out.println("Helllo các bạn "+list);
+		return  new ResponseEntity<List<BookingEntity>>(list, HttpStatus.OK);
 
-	
+	}
 }

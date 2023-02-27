@@ -21,7 +21,7 @@ public class AdminController {
 	RoomTypeService roomTypeService;
 	@Autowired
 	RoomService roomService;
-	@RequestMapping("/")
+	@RequestMapping("")
 	public String getAllProduct() {
 		return "login";
 	}
@@ -39,6 +39,12 @@ public class AdminController {
 		List<RoomTypeEntity> roomTypes = roomTypeService.getRoomTypeList();
 		view.addAttribute("roomTypes", roomTypes);
 		return "admin/sodophong";
+	}
+	@RequestMapping("/booking")
+	public String giaoDienDanhSachBooking(Model view) {
+		List<RoomTypeEntity> roomTypes = roomTypeService.getRoomTypeList();
+		view.addAttribute("roomTypes", roomTypes);
+		return "admin/danhsachbooking";
 	}
 	@ResponseBody
 	@RequestMapping(value = "/laysophong", method = RequestMethod.GET)

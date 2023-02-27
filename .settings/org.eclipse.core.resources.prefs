@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/admin/add_or_editroom.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/danhsachbooking.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/sodophong.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/layouts/admin/admin_masterpage.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/layouts/user/user_masterpage.jsp=UTF-8

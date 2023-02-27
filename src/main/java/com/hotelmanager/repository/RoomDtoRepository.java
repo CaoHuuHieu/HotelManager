@@ -17,19 +17,22 @@ public class RoomDtoRepository {
 	SessionFactory sessionFactory;
 	@Transactional
 	  public List<RoomDto> getAllRoomByStatusAndType(int type, int status){
-		Session session = sessionFactory.openSession(); 
-		Query query = null;
-		if(status == 0 && type == 0) {
-			query = session.createQuery("Select new com.hotelmanager.entities.RoomDto(r.id, r.room_no, r.room_name, t.name, r.status)"
-			  		+ " From RoomEntity r , RoomTypeEntity t where r.id_roomtype=t.id");
+		Session session = sessionFactory.openSession();
+		Query<RoomDto> query = null;
+		String sql = "Select new com.hotelmanager.entities.RoomDto(r.id, r.room_no, r.room_name, t.name, r.status) "
+				+ "From RoomEntity r , RoomTypeEntity t where r.id_roomtype=t.id ";
+		if(status == 0) {
+			if(type != 0){
+				sql += "and r.id_roomtype="+type;
+			}
 		}else {
-			query = session.createQuery("Select new com.hotelmanager.entities.RoomDto(r.id, r.room_no, r.room_name, t.name, r.status)"
-				  		+ " From RoomEntity r , RoomTypeEntity t where r.id_roomtype=t.id and r.status=:status and t.id=:type");
-				  query.setParameter("status", status);
-				  query.setParameter("type", type);
+			
+			if(type == 0) 
+				sql += "and r.status="+status;
+			else
+				sql += "and r.status="+status +" and id_roomtype="+type;
 		}
-		 return query.getResultList();
-	  
-	  }
-	 
+		query = session.createQuery(sql, RoomDto.class);
+		return query.getResultList();
+	}
 }

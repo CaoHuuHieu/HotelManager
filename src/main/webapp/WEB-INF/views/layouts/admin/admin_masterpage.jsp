@@ -35,7 +35,7 @@
               		   		<i class="fa-solid fa-hotel"></i>
                		   		<span >Sơ đồ phòng</span>
                		    </a>
-               		    <a href="/HotelManager/admin/danhsachdatphong" class="text-style">
+               		    <a href="/HotelManager/admin/booking" class="text-style">
               		   		<i class="fa-solid fa-hotel"></i>
                		   		<span>Danh sách đặt phòng</span>
                		    </a>
@@ -122,7 +122,4 @@
       			dropEle.classList.toggle("active")   			
       			/* const dropContent = document.getElementsByClassName("dropdown-conten") */
       		})
-      		
-      		
-      
       </script>

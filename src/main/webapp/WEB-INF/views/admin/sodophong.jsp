@@ -26,22 +26,22 @@
 		<div class="status" >
 			<span class="label">Trạng thái phòng: </span>
 			<div>
-				<span class="roomstatus" onclick="roomStatusClick(1)" >Tất cả(<span class="quantity"></span>)</span></span> 
-				<span class="roomstatus color_white empty" onclick="roomStatusClick(1)">  <span >Phòng
+				<span class="roomstatus" onclick="roomStatusClick(0)" >Tất cả(<span class="quantity"></span>)</span></span> 
+				<span class="roomstatus color_white background_green " onclick="roomStatusClick(1)">  <span class="color_white">Phòng
 						trống(<span class="quantity"></span>)</span>                   
 				</span>
-				<span class="roomstatus" onclick="roomStatusClick(2)" > 
-					<i class="fa-solid fa-person-walking-luggage green"></i><span>
+				<span class="roomstatus background_blue color_white" onclick="roomStatusClick(2)" > 
+					<i class="fa-solid fa-person-walking-luggage color_white"></i><span class="color_white">
 						Chuẩn bị đến(<span class="quantity"></span>) </span></span> 
-				<span class="roomstatus" onclick="roomStatusClick(3)"> <i
-					class="fa-solid fa-person-walking-luggage blue"></i>
-					<span>Đang ở(<span class="quantity"></span>) </span>
+				<span class="roomstatus background_purple" onclick="roomStatusClick(3)"> <i
+					class="fa-solid fa-person-walking-luggage color_white"></i>
+					<span class="color_white">Đang ở(<span class="quantity"></span>) </span>
 				</span> 
-				<span class="roomstatus" onclick="roomStatusClick(4)"><i class="fa-solid fa-person-walking-luggage red"></i> 
-					<span>Chuẩn bị rời(<span class="quantity"></span>)</span>
-				</span>  <span class="roomstatus color_white dirty" onclick="roomStatusClick(5)"><span >
+				<span class="roomstatus background_pink" onclick="roomStatusClick(4)"><i class="fa-solid fa-person-walking-luggage color_white"></i> 
+					<span class="color_white">Chuẩn bị rời(<span class="quantity"></span>)</span>
+				</span>  <span class="roomstatus color_white background_orange" onclick="roomStatusClick(5)"><span class="color_white">
 						Phòng bẩn(<span class="quantity"></span>)</span>               
-				</span> <span class="roomstatus color_white repair" onclick="roomStatusClick(6)"> <span >Đang sửa chữa(<span class="quantity"></span>)</span>                
+				</span> <span class="roomstatus color_white background_red" onclick="roomStatusClick(6)"> <span class="color_white">Đang sửa chữa(<span class="quantity"></span>)</span>                
 				</span>
 			</div>	
 		</div>

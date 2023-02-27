@@ -12,7 +12,7 @@
   font-size: 30px;
 }
 
-.main .room .header span {
+.main .room .header .title_header {
   font-size: 26px;
   font-weight: 500;
   display: inline-block;
@@ -92,8 +92,13 @@
   flex-wrap: wrap;
 }
 
-
-
+.main .room .booking fieldset{
+	width: 30%;
+}
+.main .room .booking fieldset legend{
+	font-size: 16px;
+	color: #333;
+}
 .main .heading {
     display: flex;
     align-items: center;
@@ -297,4 +302,46 @@
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
+}
+
+
+/* Danh sach đặt phòng */
+.search-booking  {
+    margin-top: 20px;
+}
+.search-booking form{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+}
+
+.search-booking form .form-input{
+    display: flex;
+    flex-direction: column;
+} 
+.search-booking form .form-input label {
+    margin-bottom: -8px;
+    margin-left: 10px;
+    z-index: 999;
+    background-color: #fff;
+    display: inline-block;
+    width: 80px;
+}
+.search-booking form .form-input input {
+    border: 1px solid #eee;
+}
+
+.search-booking form .form-input select {
+    border: 1px solid #eee;
+}
+.search-booking form button {
+    border: none;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #03C988;
+    color: #fff;
+    border-radius: 4px;
 }
