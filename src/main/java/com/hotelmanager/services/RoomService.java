@@ -12,7 +12,8 @@ public class RoomService {
 	@Autowired
 	RoomRepository roomRepository;
 	@Transactional
-	public Long countRoomByStatus(int status) {
-		return roomRepository.countRoomByStatus(status);
+	public Long countRoomByRoomType(int id_roomtype, int status) {
+		return roomRepository.countRoomByRoomType(id_roomtype, status);
 	}
+	
 }

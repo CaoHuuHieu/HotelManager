@@ -12,7 +12,7 @@
   font-size: 30px;
 }
 
-.main .room .header span {
+.main .room .header .title_header {
   font-size: 26px;
   font-weight: 500;
   display: inline-block;
@@ -39,21 +39,23 @@
   min-width: 200px;
 }
 
-.main .room .status a {
+.main .room .status .roomstatus {	
   padding: 4px 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 4px;
   margin-right: 8px;
   border: 1px solid #ccc;
+  	cursor: pointer;
   color: #333;
+    text-decoration: none;
 }
 
-.main .room .status a:hover {
-  text-decoration: none;
+.main .room .status .roomstatus:hover {
+
   background-color: #ccc;
 }
 
-.main .room .status a .color_white {
+.main .room .status .roomstatus .color_white {
   color: white;
 }
 
@@ -69,11 +71,20 @@
   background-color: red;
 }
 
-.main .room .status a span {
+.main .room .status .roomstatus span {
   display: inline-block;
-  margin-left: 6px;
 }
-
+.main .room .details .detail {
+	width: 110px;
+	height: 140px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+ 	align-items: center;
+	margin: 0 4px 4px 0;
+  	color: white;
+  	font-weight: 400;
+}
 .main .room .details {
   margin-top: 40px;
   display: flex;
@@ -81,46 +92,13 @@
   flex-wrap: wrap;
 }
 
-.main .room .details .green {
-  background-color: green;
+.main .room .booking fieldset{
+	width: 30%;
 }
-
-.main .room .details .red {
-  background-color: red;
+.main .room .booking fieldset legend{
+	font-size: 16px;
+	color: #333;
 }
-
-.main .room .details .blue {
-  background-color: blue;
-}
-
-.main .room .details .detail {
-  padding: 20px 30px;
-  text-align: center;
-  margin: 0 4px 4px 0;
-  color: white;
-  font-weight: 400;
-}
-
-.green {
-  color: green;
-}
-
-.blue {
-  color: blue;
-}
-
-.red {
-  color: red;
-}
-
-.white {
-  color: white;
-}
-
-.orange{
-	background-color: orange;
-}
-
 .main .heading {
     display: flex;
     align-items: center;
@@ -324,4 +302,46 @@
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
+}
+
+
+/* Danh sach đặt phòng */
+.search-booking  {
+    margin-top: 20px;
+}
+.search-booking form{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+}
+
+.search-booking form .form-input{
+    display: flex;
+    flex-direction: column;
+} 
+.search-booking form .form-input label {
+    margin-bottom: -8px;
+    margin-left: 10px;
+    z-index: 999;
+    background-color: #fff;
+    display: inline-block;
+    width: 80px;
+}
+.search-booking form .form-input input {
+    border: 1px solid #eee;
+}
+
+.search-booking form .form-input select {
+    border: 1px solid #eee;
+}
+.search-booking form button {
+    border: none;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #03C988;
+    color: #fff;
+    border-radius: 4px;
 }

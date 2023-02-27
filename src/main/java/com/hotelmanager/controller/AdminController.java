@@ -9,13 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.hotelmanager.entities.RoomTypeEntity;
 import com.hotelmanager.services.RoomService;
 import com.hotelmanager.services.RoomTypeService;
-
-
 
 @Controller
 @RequestMapping("/admin")
@@ -24,7 +21,7 @@ public class AdminController {
 	RoomTypeService roomTypeService;
 	@Autowired
 	RoomService roomService;
-	@RequestMapping("/")
+	@RequestMapping("")
 	public String getAllProduct() {
 		return "login";
 	}
@@ -40,10 +37,14 @@ public class AdminController {
 	@RequestMapping("/sodophong")
 	public String giaoDienDatPhong(Model view) {
 		List<RoomTypeEntity> roomTypes = roomTypeService.getRoomTypeList();
-		Long count = roomService.countRoomByStatus(0);
 		view.addAttribute("roomTypes", roomTypes);
-		view.addAttribute("count", count);
 		return "admin/sodophong";
+	}
+	@RequestMapping("/booking")
+	public String giaoDienDanhSachBooking(Model view) {
+		List<RoomTypeEntity> roomTypes = roomTypeService.getRoomTypeList();
+		view.addAttribute("roomTypes", roomTypes);
+		return "admin/danhsachbooking";
 	}
 	@ResponseBody
 	@RequestMapping(value = "/laysophong", method = RequestMethod.GET)

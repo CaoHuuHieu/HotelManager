@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
-* {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&display=swap");
+
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -268,4 +270,45 @@ i {
 }
 /* navbar css end */
 
+
+
+
+.background_green {
+  background-color: green;
+}
+
+.background_red {
+  background-color: red;
+}
+
+.background_blue {
+  background-color: #3A98B9;
+}
+.background_yellow{
+	background-color: #FCE22A;
+}
+.background_purple{
+	background-color: #A084DC;
+}
+.background_orange{
+	background-color: orange;
+}
+.background_pink{
+	background-color: #FF5F9E;
+}
+.color_green {
+  color: green;
+}
+
+.color_blue {
+  color: blue;
+}
+
+.color_red {
+  color: red;
+}
+
+.color_white {
+  color: white;
+}
 	

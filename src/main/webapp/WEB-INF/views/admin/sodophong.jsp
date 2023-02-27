@@ -14,94 +14,39 @@
 			<i class="fa-solid fa-hotel"></i> <span>Sơ đồ phòng</span>
 		</div>
 		<div class="select">
-			<label for="roomtype">Loại phòng: </label> <select name="roomtype"
-				id="roomtype" onchange="getRoomList()">
+			<label for="roomtype">Loại phòng: </label> 
+			<select name="roomtype"
+				id="roomtype" onchange="countRoomByType()">
 				<option value="0">Tất cả</option>
 				<c:forEach items="${roomTypes}" var="roomType">
 					<option value="${roomType.id}">${roomType.name}</option>
 				</c:forEach>
 			</select>
 		</div>
-		<div class=status>
+		<div class="status" >
 			<span class="label">Trạng thái phòng: </span>
 			<div>
-				<a href="#">Tất cả (${count})</a> <a href="#"> <i
-					class="fa-solid fa-person-walking-luggage green"></i><span>
-						Chuẩn bị đến (1) </span></a> <a href="#"> <i
-					class="fa-solid fa-person-walking-luggage blue"></i><span>Đang
-						ở (0) </span></a> <a href="#"> <i
-					class="fa-solid fa-person-walking-luggage red"></i> <span>Chuẩn
-						bị rời đi (21)</span>
-				</a> <a href="#" class="empty"> </i> <span class="color_white">Phòng
-						trống (21)</span>
-				</a> <a href="#" class="dirty"> </i> <span class="color_white">
-						Phòng bẩn (21)</span>
-				</a> <a href="#" class="repair"> </i> <span class="color_white">Phòng
-						đang sửa (21)</span>
-				</a>
-			</div>
+				<span class="roomstatus" onclick="roomStatusClick(0)" >Tất cả(<span class="quantity"></span>)</span></span> 
+				<span class="roomstatus color_white background_green " onclick="roomStatusClick(1)">  <span class="color_white">Phòng
+						trống(<span class="quantity"></span>)</span>                   
+				</span>
+				<span class="roomstatus background_blue color_white" onclick="roomStatusClick(2)" > 
+					<i class="fa-solid fa-person-walking-luggage color_white"></i><span class="color_white">
+						Chuẩn bị đến(<span class="quantity"></span>) </span></span> 
+				<span class="roomstatus background_purple" onclick="roomStatusClick(3)"> <i
+					class="fa-solid fa-person-walking-luggage color_white"></i>
+					<span class="color_white">Đang ở(<span class="quantity"></span>) </span>
+				</span> 
+				<span class="roomstatus background_pink" onclick="roomStatusClick(4)"><i class="fa-solid fa-person-walking-luggage color_white"></i> 
+					<span class="color_white">Chuẩn bị rời(<span class="quantity"></span>)</span>
+				</span>  <span class="roomstatus color_white background_orange" onclick="roomStatusClick(5)"><span class="color_white">
+						Phòng bẩn(<span class="quantity"></span>)</span>               
+				</span> <span class="roomstatus color_white background_red" onclick="roomStatusClick(6)"> <span class="color_white">Đang sửa chữa(<span class="quantity"></span>)</span>                
+				</span>
+			</div>	
 		</div>
-		<div class="details">
-			<div class="detail green">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail red">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail orange">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail green">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail red">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail orange">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail green">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail red">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail orange">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail green">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail red">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
-			<div class="detail orange">
-				<p class="room_no">101</p>
-				<p class="room_type">Standar</p>
-				<i class="fa-solid fa-circle-check white"></i>
-			</div>
+		<div class="details"  onload="roomStatusClick(0)">
+			
 		</div>
 	</div>
 
