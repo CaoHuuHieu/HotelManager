@@ -22,19 +22,4 @@ public class RoomTypeRepository {
 		return list;
 	}
 	
-	@Transactional
-	public void addRoomType(RoomTypeEntity roomType) {
-		Session session = sessionFactory.openSession();
-		session.save(roomType);
-	}
-	@Transactional
-	public void updateRoomType(RoomTypeEntity roomType) {
-		Session session = sessionFactory.getCurrentSession();
-		session.update(roomType);
-	}
-	@Transactional
-	public void deleteRoomType(RoomTypeEntity roomType) {
-		Session session = sessionFactory.openSession();
-		session.delete(session);
-	}
 }

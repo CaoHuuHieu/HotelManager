@@ -22,10 +22,4 @@ public class RoomDtoService {
 		return roomDtoRepository.getRoomList();
 	}
 	
-	@Transactional
-	public void addRoom (RoomEntity room) {
-		roomDtoRepository.addRoom(room);
-	}
-	
-	
 }

@@ -92,10 +92,5 @@ public class RoomEntity {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	@Override
-	public String toString() {
-		return "RoomEntity [id=" + id + ", room_no=" + room_no + ", room_name=" + room_name + ", id_roomtype="
-				+ id_roomtype + ", num_people=" + num_people + ", price=" + price + ", status=" + status + "]";
-	}
 
 }

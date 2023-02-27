@@ -17,13 +17,35 @@
                 </li>
               </a>
               <p class="title">LIST</p>
-              <a href="/HotelManager/admin/room" class="text-style">
+              <!-- <a href="/HotelManager/admin/room" class="text-style">
                 <li>
                   <i class="fa-solid fa-hotel"></i>
                   <span>Room</span>
                 </li>
-              </a>
-           
+              </a> -->
+              <li>
+           		<div class="dropdown">
+                	<div class="dropbtn">	
+                		<i class="fa-solid fa-hotel"></i>
+                  		<span>Room</span>
+                  	</div>	
+			  		  <div class="dropdown-content">
+					    <a href="/HotelManager/admin/room" class="text-style">
+              		   		<i class="fa-solid fa-hotel"></i>
+               		   		<span>Danh sách Phòng</span>
+               		    </a>
+               		    <a href="/HotelManager/admin/utilities" class="text-style">
+              		   		<i class="fa-solid fa-hotel"></i>
+               		   		<span>Quản lý tiện ích</span>
+               		    </a>
+               		      <a href="/HotelManager/admin/service" class="text-style">
+              		   		<i class="fa-solid fa-hotel"></i>
+               		   		<span>Quản lý dịch vụ</span>
+               		    </a>
+					  </div>
+				</div>
+           		
+           		 </li>
                 <li>
                 <div class="dropdown">
                 	<div class="dropbtn">	
@@ -54,7 +76,7 @@
 					  </div>
 					</div>
                 </li>
-              <a href="/quanlydatphong" class="text-style">
+              <a href="/HotelManager/admin/users" class="text-style">
                 <li>
                   <i class="fa-solid fa-user"></i>
                   <span>Users</span>
@@ -117,12 +139,13 @@
        
       <script>
       		const dropBtn = document.getElementsByClassName("dropbtn");
-      		const dropEle = document.querySelector(".dropdown")
-      		dropEle.addEventListener("click", () => {
-      			dropEle.classList.toggle("active")   			
-      			/* const dropContent = document.getElementsByClassName("dropdown-conten") */
-      		})
-      		
+      		console.log(dropBtn,"=====================");
+      		for(let i = 0 ; i < dropBtn.length; i++){
+      			const dropDown = dropBtn[i].closest(".dropdown");
+          		dropBtn[i].addEventListener("click", () => {
+          			dropDown.classList.toggle("active")
+          		})
+      		}
       		
       
       </script>

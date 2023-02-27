@@ -11,4 +11,25 @@ public class UserController {
 	public String trangChu() {
 		return "user/homepage";
 	}
+	
+	
+	@RequestMapping("/rooms")
+	public String trangRoom() {
+		return "user/roompage";
+	}
+	
+	@RequestMapping("/about")
+	public String trangAbout() {
+		return "user/aboutpage";
+	}
+	
+	@RequestMapping("/contact")
+	public String trangContact() {
+		return "user/contactpage";
+	}
+	
+	@RequestMapping("/rooms/detail")
+	public String trangRoomDetail() {
+		return "user/roomdetail";
+	}
 }

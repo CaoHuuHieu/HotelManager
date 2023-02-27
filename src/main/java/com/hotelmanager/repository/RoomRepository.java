@@ -2,6 +2,7 @@ package com.hotelmanager.repository;
 
 import java.util.List;
 
+import javax.management.Query;
 import javax.transaction.Transactional;
 import javax.validation.constraints.Email;
 
@@ -27,12 +28,12 @@ public class RoomRepository {
 	}
 	
 	
-	@Transactional
-	public List<RoomEntity> getRoomList(){
+	@Transactional public List<RoomEntity> getRoomList(){ 
 		Session session = sessionFactory.openSession();
 		List<RoomEntity> list = session.createQuery("from RoomEntity r", RoomEntity.class).getResultList();
-		return list;
+		return list; 
 	}
+	
 	
 	@Transactional
 	public void addRoom (RoomEntity room) {
@@ -44,8 +45,21 @@ public class RoomRepository {
 	@Transactional
 	public void deleteRoom (int id) {
 		Session session = sessionFactory.openSession();
-		RoomEntity roomid = session.get(RoomEntity.class, id);
-		System.out.println("================"+roomid);
-		session.delete(roomid);
+		session.beginTransaction();
+		RoomEntity roomEntity = session.find(RoomEntity.class, id);
+		session.delete(roomEntity);
+		session.getTransaction().commit();
+		session.close();
+		
 	}
+	
+	@Transactional
+	public void updateRoom(RoomEntity roome) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.update(roome);
+		session.getTransaction().commit();
+		session.close();
+	}
+	
 }

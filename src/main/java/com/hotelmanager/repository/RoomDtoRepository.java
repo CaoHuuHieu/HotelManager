@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hotelmanager.entities.RoomDto;
-import com.hotelmanager.entities.RoomEntity;
-import com.hotelmanager.entities.RoomTypeEntity;
 
 @Repository
 public class RoomDtoRepository {
@@ -31,19 +29,4 @@ public class RoomDtoRepository {
 		return list;
 	}
 	
-	@Transactional
-	public void addRoom(RoomEntity room) {
-		Session session = sessionFactory.openSession();
-		session.save(room);
-	}
-	@Transactional
-	public void updateRoom(RoomEntity room) {
-		Session session = sessionFactory.getCurrentSession();
-		session.update(room);
-	}
-	@Transactional
-	public void deleteRoom(RoomEntity room) {
-		Session session = sessionFactory.openSession();
-		session.delete(session);
-	}
 }

@@ -10,7 +10,6 @@
                         <table class="table">
                             <thead class="thead-dark">
                               <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Room No</th>
                                 <th scope="col">Room Name</th>
                                 <th scope="col">Type</th>
@@ -23,7 +22,6 @@
                             <tbody>
                               <c:forEach var="roomlist" items="${roomlist}">
 	                              <tr>
-	                                <td>${roomlist.id}</td>
 	                                <td>${roomlist.room_no}</td>
 	                                <td>${roomlist.room_name}</td>
 	                                <td>${roomlist.name_type}</td>
@@ -31,8 +29,8 @@
 	                                <td>${roomlist.price}</td>
 	                                <td>${roomlist.status}</td>
 	                                <td>
-	                                    <button type="button" class="btn btn-success">Edit</button>
-	                                    <button onclick="location.href='deleteroom/${roomlist.id}'" type="button" class="btn btn-danger">Delete</button>
+		                                <button onclick="location.href='/HotelManager/admin/editroom?id=${roomlist.id}'" type="button" class="btn btn-success">Edit</button>
+		                                <button onclick="location.href='deleteroom?id=${roomlist.id}'" type="button" class="btn btn-danger">Delete</button>
 	                                </td>
 	                              </tr>
                               </c:forEach>	

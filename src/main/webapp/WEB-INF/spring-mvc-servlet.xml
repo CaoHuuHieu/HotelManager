@@ -16,12 +16,12 @@
 	<context:annotation-config />
 	<!-- Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven />
-	<bean id="roomDtoRepository" class="com.hotelmanager.repository.RoomDtoRepository"/>
+	<!-- <bean id="roomDtoRepository" class="com.hotelmanager.repository.RoomDtoRepository"/>
 	<bean id="roomDtoService" class="com.hotelmanager.services.RoomDtoService"/>
 	<bean id="roomRepository" class="com.hotelmanager.repository.RoomRepository"/>
 	<bean id="roomService" class="com.hotelmanager.services.RoomService"/>
 	<bean id="roomTypeRepository" class="com.hotelmanager.repository.RoomTypeRepository"/>
-	<bean id="roomTypeService" class="com.hotelmanager.services.RoomTypeService"/>
+	<bean id="roomTypeService" class="com.hotelmanager.services.RoomTypeService"/> -->
 	<!-- Define Spring MVC view resolver -->
 	<bean id="view"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

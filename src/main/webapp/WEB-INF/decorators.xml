@@ -11,12 +11,13 @@
 	</decorator>
 	<decorator name="admin" page="admin.jsp">
 		<pattern>
-			/admin/*
+			/admin*
 		</pattern>
 	</decorator>
-	<decorator name="admin" page="admin.jsp">
+	<!-- <decorator name="admin" page="admin.jsp">
 		<pattern>
 			/admin
 		</pattern>
-	</decorator>
+	</decorator> -->
+	
 </decorators>

@@ -1,7 +1,11 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/admin/Utilities.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/add_or_editroom.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/add_or_editservice.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/service.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/sodophong.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/layouts/admin/admin_masterpage.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/layouts/user/user_masterpage.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/layouts/user/header.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/user/homepage.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/user/roomdetail.jsp=UTF-8

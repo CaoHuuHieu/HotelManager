@@ -15,10 +15,11 @@ public class RoomService {
 	@Autowired
 	RoomRepository roomRepository;
 	
-	@Transactional
-	public List<RoomEntity> getRoomList(){
+
+	@Transactional public List<RoomEntity> getRoomList(){
 		return roomRepository.getRoomList(); 
 	}
+	
 	@Transactional
 	public RoomEntity getRoombyID(int id) {
 		return roomRepository.getRoombyID(id);
@@ -31,5 +32,9 @@ public class RoomService {
 	public void deleteRoom (int id) { 
 		 roomRepository.deleteRoom(id); 
 	}
-	 
+	
+	@Transactional
+	public void updateRoom (RoomEntity roome) { 
+		 roomRepository.updateRoom(roome); 
+	}
 }

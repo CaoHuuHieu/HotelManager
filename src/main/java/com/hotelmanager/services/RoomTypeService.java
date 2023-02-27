@@ -19,17 +19,5 @@ public class RoomTypeService {
 	public List<RoomTypeEntity> getRoomTypeList(){
 		return roomTypeRepository.getRoomTypeList();
 	}
-	@Transactional
-	public void addRoomType(RoomTypeEntity roomType) {
-		roomTypeRepository.addRoomType(roomType);
-	}
-	@Transactional
-	public void updateRoomType(RoomTypeEntity roomType) {
-		roomTypeRepository.updateRoomType(roomType);
-	}
-	@Transactional
-	public void deleteRoomType(RoomTypeEntity roomType) {
-		roomTypeRepository.deleteRoomType(roomType);
-	}
 	
 }
