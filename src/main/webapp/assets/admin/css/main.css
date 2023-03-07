@@ -74,16 +74,68 @@
 .main .room .status .roomstatus span {
   display: inline-block;
 }
+.flex_container{
+	display: flex;
+	height: 100%;
+}
 .main .room .details .detail {
-	width: 110px;
-	height: 140px;
- 	display: flex;
- 	flex-direction: column;
- 	justify-content: center;
- 	align-items: center;
-	margin: 0 4px 4px 0;
+	width: 280px;
+	height: 120px;
+	margin: 0 6px 6px 0;
   	color: white;
-  	font-weight: 400;
+  	position: relative;
+  	cursor: pointer;
+}
+.main .room .details .detail .room_status{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.main .room .details .detail .room_no{
+	background-color: #fff;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	color: #333;
+	font-weight: 500;
+	font-size: 20px;
+	margin: 20px 10px	;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+}
+.main .room .details .detail .room_date{
+	font-size: 12px;
+	float: right;
+	margin-right: 8px;
+}
+.main .room .details .detail .room_type{
+	color: #fff;
+	font-weight: 500;
+	font-size: 20px;
+	width: 100%;
+}
+.main .room .details .detail .control{
+	position: absolute;
+	right: -120px;
+	top: 20px;
+	width: 180px;
+	height: 110px;
+	background-color: #fff;	
+	z-index: 10;
+	border-radius: 4px;
+	display: none;
+}
+.main .room .details .detail .control a{
+	display:block;
+	padding: 2px 8px;
+	color: #333;
+	text-decoration: none;
+}
+.main .room .details .detail .control a:hover{
+	background-color: #ccc;
+	color: blue;
 }
 .main .room .details {
   margin-top: 40px;
@@ -309,18 +361,18 @@
 .search-booking  {
     margin-top: 20px;
 }
-.search-booking form{
+.search-booking .form{
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
     align-items: flex-end;
 }
 
-.search-booking form .form-input{
+.search-booking .form .form-input{
     display: flex;
     flex-direction: column;
 } 
-.search-booking form .form-input label {
+.search-booking .form .form-input label {
     margin-bottom: -8px;
     margin-left: 10px;
     z-index: 999;
@@ -328,14 +380,14 @@
     display: inline-block;
     width: 80px;
 }
-.search-booking form .form-input input {
+.search-booking .form .form-input input {
     border: 1px solid #eee;
 }
 
-.search-booking form .form-input select {
+.search-booking .form .form-input select {
     border: 1px solid #eee;
 }
-.search-booking form button {
+.search-booking .form button {
     border: none;
     display: flex;
     padding: 10px 15px;
@@ -344,4 +396,206 @@
     background-color: #03C988;
     color: #fff;
     border-radius: 4px;
+}
+.main-check-booking {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.main-check-booking .left {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 500px;
+    overflow-y: auto;
+    align-items: center;
+    position: relative;
+}
+
+.main-check-booking .left .check-booking-detail {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    width: 85%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    gap: 10px;
+    background-color: #ECF2FF;
+}
+.main-check-booking .left .check-booking-detail .detail-cus {
+    text-align: left;
+}
+
+.main-check-booking .left .check-booking-detail .detail-cus p {
+    background-color: #fff;
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.main-check-booking .left .check-booking-detail .detail-date p span {
+    font-size: 12px;
+    font-weight: bold;
+}
+.main-check-booking .left .check-booking-detail .detail-date {
+    text-align: right;
+
+}
+
+.main-check-booking .left .check-booking-detail .detail-date p {
+    background-color: #537fe7;
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 14px;
+    margin: 0px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.main-check-booking .right {
+	padding: 20px 8px;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.main-check-booking .right .form{
+	width: 70%;
+}
+.main-check-booking .right .form-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.main-check-booking .right  .form-input input {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+}
+
+.main-check-booking .right .button {
+	display: block;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #eee;
+    text-align: center;
+   margin-top: 20px;
+}
+
+.main-check-booking .right #message {
+	font-size: 12px;
+	color: red;
+	text-align: center;
+	display: none
+}
+
+
+
+
+.popup-check-booking {
+    display: flex;
+    background-color: #eee;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.popup-check-booking input::placeholder {
+    font-size: 13px;
+}
+
+
+.popup-check-booking .left h5 {
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 2px solid #eee;
+
+}
+
+
+
+
+.popup-check-booking .right {
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.popup-check-booking .right h5 {
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 2px solid #eee;
+
+}
+
+
+.popup-check-booking .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.popup-check-booking .right .input-form {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup-check-booking .right .input-form .text {
+    position: relative;
+    flex: 2;
+}
+.popup-check-booking .right  .input-form .text:nth-child(2) {
+    flex: 1;
+}
+.popup-check-booking .right  .input-form .text input {
+    padding: 5px 40px;
+}
+.popup-check-booking .right  .input-form .text span {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-check-booking .right .input-form input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    outline: none;
+    border-radius: 4px;
+}
+.popup-check-booking .right button{
+	width: 50%;
+	color: #fff;
+	padding: 4px;
+	border-radius: 4px;
+	background-color: #95BDFF;
+	font-size: 16px;
+	border: 1px solid #95BDFF;
+}
+.popup-check-booking .right textarea {
+    border: 1px solid #eee;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
 }

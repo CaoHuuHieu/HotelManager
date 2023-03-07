@@ -8,43 +8,51 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.hotelmanager.entities.BookingEntity;
+
+import com.hotelmanager.entities.ImageEntity;
 
 @Repository
-public class BookingRepository {
+public class ImageRepository {
 	@Autowired
-	SessionFactory sessionFactory ;
+	SessionFactory sessionFactory;
 	
 	@Transactional
-	public List<BookingEntity> getAllBooking(){
+	public List<ImageEntity> getImageList(){
 		Session session = sessionFactory.openSession();
-		List<BookingEntity> list = session.createQuery("from BookingEntity",BookingEntity.class).getResultList();
+		List<ImageEntity> list = session.createQuery("from ImageEntity ", ImageEntity.class).getResultList();
 		return list;
 	}
 	
 	@Transactional
-	public void addNewBooking (BookingEntity bookingEntity) {
+	public ImageEntity getImageById(int id) {
 		Session session = sessionFactory.openSession();
-		session.save(bookingEntity);
+		ImageEntity iID = session.get(ImageEntity.class, id);
+		return iID;
 	}
 	
 	@Transactional
-	public void deleteBooking (int id) {
+	public void addImage (ImageEntity image) {
 		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		BookingEntity bookEntity = session.find(BookingEntity.class, id);
-		session.delete(bookEntity);
-		session.getTransaction().commit();
-		session.close();
+		session.save(image);
 	}
 	
 	@Transactional
-	public void updateBooking(BookingEntity bookingEntity) {
+	public void deleteImage (int id) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.update(bookingEntity);
+		ImageEntity image = session.find(ImageEntity.class, id);
+		session.delete(image);
+		session.getTransaction().commit();
+		session.close();
+		
+	}
+	
+	@Transactional
+	public void updateImage(ImageEntity image) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.update(image);
 		session.getTransaction().commit();
 		session.close();
 	}
-	
 }

@@ -103,7 +103,7 @@ i {
 }
 
 .center ul li span {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: #999;
   margin-left: 10px;
@@ -265,9 +265,7 @@ i {
 	display: block;
 }
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
+
 /* navbar css end */
 
 

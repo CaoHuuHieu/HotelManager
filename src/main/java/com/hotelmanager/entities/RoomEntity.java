@@ -1,9 +1,17 @@
 package com.hotelmanager.entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,9 +22,35 @@ public class RoomEntity {
 	private int id;
 	private String room_no;
 	private String room_name;
-	private int id_roomtype;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_roomtype", referencedColumnName = "id")
+	private RoomTypeEntity roomTypeEntity;
+	
+	 @ManyToMany
+	 @JoinTable(
+			  name = "ImageRoom", 
+			  joinColumns = @JoinColumn(name = "id_room"), 
+			  inverseJoinColumns = @JoinColumn(name = "id_pic"))
+     Set<ImageEntity> imageEntities;
+	 
+	 public Set<ImageEntity> getImageEntities() {
+		return imageEntities;
+	}
+	public void setImageEntities(Set<ImageEntity> imageEntities) {
+		this.imageEntities = imageEntities;
+	}
+	
+	@OneToMany(mappedBy = "bookingdetail")
+	 
+	 
+	public RoomTypeEntity getRoomTypeEntity() {
+		return roomTypeEntity;
+	}
+	public void setRoomTypeEntity(RoomTypeEntity roomTypeEntity) {
+		this.roomTypeEntity = roomTypeEntity;
+	}
 	private int num_people;
-	private float price;
+	private int price;
 	private int status;
 	public int getId() {
 		return id;
@@ -36,22 +70,17 @@ public class RoomEntity {
 	public void setRoom_name(String room_name) {
 		this.room_name = room_name;
 	}
-	public int getId_roomtype() {
-		return id_roomtype;
-	}
-	public void setId_roomtype(int id_roomtype) {
-		this.id_roomtype = id_roomtype;
-	}
+	
 	public int getNum_people() {
 		return num_people;
 	}
 	public void setNum_people(int num_people) {
 		this.num_people = num_people;
 	}
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public int getStatus() {
